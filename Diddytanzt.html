@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tanzender Stickman</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+        }
+        .stickman {
+            position: relative;
+            width: 10px;
+            height: 100px;
+        }
+        .head {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            top: 0;
+            left: -5px;
+        }
+        .body {
+            width: 2px;
+            height: 50px;
+            background: black;
+            position: absolute;
+            top: 20px;
+            left: 4px;
+        }
+        .arm-left, .arm-right {
+            width: 30px;
+            height: 2px;
+            background: black;
+            position: absolute;
+            top: 25px;
+        }
+        .arm-left { left: -30px; transform-origin: right center; animation: wave 1s infinite alternate; }
+        .arm-right { left: 4px; transform-origin: left center; animation: wave 1s infinite alternate-reverse; }
+        .leg-left, .leg-right {
+            width: 2px;
+            height: 30px;
+            background: black;
+            position: absolute;
+            top: 70px;
+        }
+        .leg-left { left: -10px; transform-origin: top center; animation: kick 1s infinite alternate; }
+        .leg-right { left: 4px; transform-origin: top center; animation: kick 1s infinite alternate-reverse; }
+
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(30deg); }
+        }
+        @keyframes kick {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(20deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="stickman">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="arm-left"></div>
+        <div class="arm-right"></div>
+        <div class="leg-left"></div>
+        <div class="leg-right"></div>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tanzender und springender Stickman</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 100vh;
+            background: #f0f0f0;
+            gap: 150px;
+        }
+
+        .stickman, .jumper {
+            position: relative;
+            width: 10px;
+            height: 100px;
+        }
+
+        .head {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            top: 0;
+            left: -5px;
+        }
+        .body {
+            width: 2px;
+            height: 50px;
+            background: black;
+            position: absolute;
+            top: 20px;
+            left: 4px;
+        }
+        .arm-left, .arm-right {
+            width: 30px;
+            height: 2px;
+            background: black;
+            position: absolute;
+            top: 25px;
+        }
+        .arm-left { left: -30px; transform-origin: right center; }
+        .arm-right { left: 4px; transform-origin: left center; }
+        .leg-left, .leg-right {
+            width: 2px;
+            height: 30px;
+            background: black;
+            position: absolute;
+            top: 70px;
+        }
+        .leg-left { left: -10px; transform-origin: top center; }
+        .leg-right { left: 4px; transform-origin: top center; }
+
+        /* Tanzanimation */
+        .stickman .arm-left { animation: wave 1s infinite alternate; }
+        .stickman .arm-right { animation: wave 1s infinite alternate-reverse; }
+        .stickman .leg-left { animation: kick 1s infinite alternate; }
+        .stickman .leg-right { animation: kick 1s infinite alternate-reverse; }
+
+        /* Sprunganimation */
+        .jumper {
+            animation: jump 1s infinite ease-in-out;
+        }
+
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(30deg); }
+        }
+        @keyframes kick {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(20deg); }
+        }
+        @keyframes jump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-50px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tanzender Stickman -->
+    <div class="stickman">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="arm-left"></div>
+        <div class="arm-right"></div>
+        <div class="leg-left"></div>
+        <div class="leg-right"></div>
+    </div>
+
+    <!-- Springender Stickman -->
+    <div class="jumper">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="arm-left"></div>
+        <div class="arm-right"></div>
+        <div class="leg-left"></div>
+        <div class="leg-right"></div>
+    </div>
+</body>
+</html>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60">
+  <rect width="200" height="60" rx="10" fill="#FF9900"/>
+  <text x="100" y="38" font-size="28" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">Diddy Öl</text>
+</svg>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diddy Öl Logo mit Wasser</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            background: #cce6ff; /* Himmelblau */
+            padding-top: 50px;
+        }
+
+        .logo-container {
+            position: relative;
+            width: 200px;
+        }
+
+        /* Logo */
+        .logo {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo rect {
+            fill: #FF9900; /* Orange Hintergrund */
+            rx: 10;
+        }
+
+        .logo text {
+            fill: white;
+            font-family: Arial;
+            font-weight: bold;
+            font-size: 28px;
+            text-anchor: middle;
+        }
+
+        /* Wasser im Pool */
+        .water {
+            position: absolute;
+            top: 60px; /* unter dem Logo */
+            width: 200px;
+            height: 50px;
+            display: flex;
+        }
+
+        .block {
+            width: 20px;
+            height: 20px;
+            background: #3399ff;
+            margin: 1px;
+            animation: wave 1s infinite alternate;
+        }
+
+        .block:nth-child(2) { animation-delay: 0.1s; }
+        .block:nth-child(3) { animation-delay: 0.2s; }
+        .block:nth-child(4) { animation-delay: 0.3s; }
+        .block:nth-child(5) { animation-delay: 0.4s; }
+        .block:nth-child(6) { animation-delay: 0.5s; }
+        .block:nth-child(7) { animation-delay: 0.6s; }
+        .block:nth-child(8) { animation-delay: 0.7s; }
+        .block:nth-child(9) { animation-delay: 0.8s; }
+        .block:nth-child(10) { animation-delay: 0.9s; }
+
+        @keyframes wave {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <!-- Logo -->
+        <svg class="logo" width="200" height="60">
+            <rect width="200" height="60" rx="10"/>
+            <text x="100" y="38">Diddy Öl</text>
+        </svg>
+
+        <!-- Wasser aus Blöcken -->
+        <div class="water">
+            <div class="block"></div>
+
